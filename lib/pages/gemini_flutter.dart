@@ -6,7 +6,9 @@ class GeminiFlutter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Gemini'),
+      appBar: AppBar(
+        title: Text('Gemini API Integration With Flutter'),
+      ),
     );
   }
 }

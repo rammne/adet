@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class FirebaseTiles extends StatelessWidget {
-  final double width;
-  final double height;
-  const FirebaseTiles({
+class FirebaseTile extends StatelessWidget {
+  final String cook;
+  final String food;
+  FirebaseTile({
     super.key,
-    required this.width,
-    required this.height,
+    required this.food,
+    required this.cook,
   });
+
+  final TextStyle style = GoogleFonts.comicNeue();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      child: Card(
-        color: Colors.blue,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text('test'),
+    return Card(
+      color: Colors.red[200],
+      child: ListTile(
+        tileColor: Colors.red[200],
+        title: Text(
+          food.toUpperCase(),
+          style: style.copyWith(fontSize: 30),
+        ),
+        subtitle: Text(
+          'Cook: $cook',
+          style: style.copyWith(fontSize: 25),
         ),
       ),
     );
